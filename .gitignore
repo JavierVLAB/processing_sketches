@@ -8,3 +8,8 @@ application.windows32
 application.windows64
 application.macosx
 out
+images/
+images2/
+images_output/
+*.mpeg
+*.mp4
