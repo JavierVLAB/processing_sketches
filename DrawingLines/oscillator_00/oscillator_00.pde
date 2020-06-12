@@ -39,10 +39,10 @@ void draw() {
     //ellipse(p.x,p.y,10,10);
     vertex(x, y);
     q = p.copy();
-    t+=0.025;
+    t+=0.05;
   }
   endShape();
   popMatrix();
   
-  t-=0.025;
+  t-=0.05;
 }
