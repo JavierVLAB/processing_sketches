@@ -1,6 +1,6 @@
 int L = 100;
 float w = 1;
-
+boolean loop = true;
 
 Oscillator os1 = new Oscillator(L, w, 0.0001, 0);
 Oscillator os2 = new Oscillator(L, w+1, 0, PI/4);
@@ -25,12 +25,12 @@ void setup() {
 void draw() {
   noFill();
   pushMatrix();
-  
+
   translate(width/2, height/2);
   rotate(radians(t*0.1));
   translate(50, 0);
   beginShape();
-  for (int i= 0; i < 50; i++) {
+  for (int i= 0; i < 100; i++) {
 
     float x = os1.position(t)+os2.position(t);
     float y = os3.position(t)+os4.position(t);
@@ -43,6 +43,16 @@ void draw() {
   }
   endShape();
   popMatrix();
-  
+
   t-=0.05;
+}
+
+void keyPressed() {
+  if(loop) {
+    loop = false;
+    noLoop();
+  } else {
+    loop = true;
+    loop();
+  }
 }
